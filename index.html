@@ -3,14 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI工具导航 - 发现最佳AI工具 | 500+精选工具免费使用</title>
-    <meta name="description" content="收录500+精选AI工具，ChatGPT、Midjourney、Claude等热门工具一网打尽，每日更新，完全免费！">
+    <title>AI工具导航 - 发现最佳AI工具 | 100+精选工具免费使用</title>
+    <meta name="description" content="收录100+精选AI工具，ChatGPT、Midjourney、Claude等热门工具一网打尽，每日更新，完全免费！">
     <meta name="keywords" content="AI工具,AI导航,ChatGPT,Midjourney,AI绘画,AI写作,人工智能工具">
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%238b5cf6' rx='20' width='100' height='100'/><text x='50' y='70' font-size='50' text-anchor='middle' fill='white'>AI</text></svg>">
+    <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%238b5cf6' rx='20' width='100' height='100'/><text x='50' y='70' font-size='50' text-anchor='middle' fill='white'>AI</text></svg>">
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="AI工具导航 - 发现最佳AI工具 | 100+精选工具免费使用">
+    <meta property="og:description" content="收录100+精选AI工具，ChatGPT、Midjourney、Claude等热门工具一网打尽，每日更新，完全免费！">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://aihub.example.com">
+    <meta property="og:image" content="https://aihub.example.com/og-image.png">
+    <meta property="og:locale" content="zh_CN">
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="AI工具导航 - 发现最佳AI工具">
+    <meta name="twitter:description" content="收录100+精选AI工具，ChatGPT、Midjourney、Claude等热门工具一网打尽">
+    <meta name="twitter:image" content="https://aihub.example.com/og-image.png">
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://aihub.example.com">
     <link rel="stylesheet" href="style.css">
     <!-- Google Fonts 国内访问慢，暂时注释 -->
     <!-- <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"> -->
 </head>
 <body>
+    <!-- 跳过导航链接 - 无障碍性 -->
+    <a href="#tools" class="skip-link">跳过导航，直接访问主要内容</a>
+
     <!-- 顶部公告条 -->
     <div class="announcement-bar" id="announcementBar">
         <div class="container">
@@ -19,16 +39,8 @@
                 <div class="announcement-slider">
                     <div class="announcement-track" id="announcementTrack">
                         <div class="announcement-item active">
-                            <strong>🔥 限时福利</strong> 新用户注册即送100积分，可兑换ChatGPT Plus账号！
-                            <a href="#" class="announcement-btn" onclick="openModal('registerModal')">立即领取</a>
-                        </div>
-                        <div class="announcement-item">
-                            <strong>📢 新工具上线</strong> Sora、Pika、Suno AI等热门工具已收录，快来体验！
-                            <a href="#" class="announcement-btn" onclick="scrollToTools()">立即查看</a>
-                        </div>
-                        <div class="announcement-item">
-                            <strong>🎁 会员特惠</strong> AI工具会员限时5折，一键解锁50+付费工具！
-                            <a href="#" class="announcement-btn" onclick="openModal('vipModal')">立即开通</a>
+                            <strong>📢 广告位招租</strong> 首页黄金广告位，日流量10万+，欢迎合作！
+                            <a href="#" class="announcement-btn" onclick="openModal('adModal')">联系我们</a>
                         </div>
                     </div>
                 </div>
@@ -38,7 +50,7 @@
     </div>
 
     <!-- 导航栏 -->
-    <header class="header">
+    <header class="header" role="banner">
         <div class="container">
             <div class="header-left">
                 <a href="#" class="logo" onclick="goHome(event)">
@@ -53,6 +65,7 @@
                 </a>
                 <nav class="nav">
                     <a href="#" class="nav-link active" data-nav="home" onclick="switchNav('home', event)">首页</a>
+                    <a href="#" class="nav-link" data-nav="articles" onclick="switchNav('articles', event)">AI文章</a>
                     <a href="#" class="nav-link" data-nav="new" onclick="switchNav('new', event)">
                         <span class="nav-badge">NEW</span>
                         最新上线
@@ -60,6 +73,12 @@
                     <a href="#" class="nav-link" data-nav="hot" onclick="switchNav('hot', event)">热门榜</a>
                     <a href="#" class="nav-link" data-nav="free" onclick="switchNav('free', event)">免费工具</a>
                 </nav>
+                <!-- 移动端菜单按钮 -->
+                <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="打开菜单" aria-expanded="false">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                </button>
             </div>
             <div class="header-right">
                 <div class="search-box" id="searchBox">
@@ -112,14 +131,14 @@
             <div class="hero-content">
                 <div class="hero-badge">
                     <span class="badge-icon">🚀</span>
-                    <span>2024年最受欢迎的AI工具导航</span>
+                    <span>2025年最受欢迎的AI工具导航</span>
                 </div>
                 <h1 class="hero-title">
                     发现<span class="gradient-text">最强AI工具</span>
                     <br>让工作效率提升<span class="highlight-number">10倍</span>
                 </h1>
                 <p class="hero-desc">
-                    精选 <strong>500+</strong> 款AI工具，涵盖对话、绘画、写作、编程等12大分类
+                    精选 <strong>100+</strong> 款AI工具，涵盖对话、绘画、写作、编程等12大分类
                     <br>每日更新，完全免费，助你成为AI时代先行者
                 </p>
                 <div class="hero-actions">
@@ -138,12 +157,12 @@
                 </div>
                 <div class="hero-stats">
                     <div class="stat-item">
-                        <span class="stat-value" data-count="500">0</span>
+                        <span class="stat-value" data-count="102">0</span>
                         <span class="stat-label">AI工具</span>
                     </div>
                     <div class="stat-divider"></div>
                     <div class="stat-item">
-                        <span class="stat-value" data-count="12">0</span>
+                        <span class="stat-value" data-count="11">0</span>
                         <span class="stat-label">分类</span>
                     </div>
                     <div class="stat-divider"></div>
@@ -257,7 +276,7 @@
     </section>
 
     <!-- 主内容区 -->
-    <main class="main-content">
+    <main class="main-content" role="main">
         <div class="container">
             <div class="content-layout">
                 <!-- 左侧边栏 -->
@@ -277,14 +296,10 @@
                     <div class="sidebar-card ad-card">
                         <div class="ad-badge">广告</div>
                         <div class="ad-content">
-                            <div class="ad-icon">🎁</div>
-                            <h4>AI工具会员</h4>
-                            <p>一键解锁50+付费AI工具</p>
-                            <div class="ad-price">
-                                <span class="price-original">¥299/月</span>
-                                <span class="price-current">¥99/月</span>
-                            </div>
-                            <a href="#" class="ad-btn" onclick="openModal('vipModal')">立即开通</a>
+                            <div class="ad-icon">📢</div>
+                            <h4>广告位招租</h4>
+                            <p>优质流量，精准用户，欢迎投放</p>
+                            <a href="#" class="ad-btn" onclick="openModal('adModal')">联系合作</a>
                         </div>
                     </div>
 
@@ -337,55 +352,86 @@
                     </div>
                 </div>
 
+                <!-- AI文章区域 -->
+                <div class="articles-section" id="articlesSection" style="display: none;">
+                    <div class="articles-header">
+                        <h2>📚 AI前沿文章</h2>
+                        <p>深度解读AI行业动态，掌握最新技术趋势</p>
+                        <div class="articles-filter">
+                            <button class="filter-btn active" data-filter="all" onclick="filterArticles('all')">全部</button>
+                            <button class="filter-btn" data-filter="news" onclick="filterArticles('news')">行业新闻</button>
+                            <button class="filter-btn" data-filter="tutorial" onclick="filterArticles('tutorial')">教程指南</button>
+                            <button class="filter-btn" data-filter="review" onclick="filterArticles('review')">产品评测</button>
+                            <button class="filter-btn" data-filter="trend" onclick="filterArticles('trend')">趋势分析</button>
+                        </div>
+                    </div>
+                    <div class="articles-grid" id="articlesGrid">
+                        <!-- 文章卡片通过JS生成 -->
+                    </div>
+                    <div class="articles-pagination" id="articlesPagination">
+                        <!-- 分页通过JS生成 -->
+                    </div>
+                </div>
+
+                <!-- 文章详情模态框 -->
+                <div class="article-detail-modal" id="articleDetailModal" style="display: none;">
+                    <div class="article-detail-content">
+                        <button class="article-close-btn" onclick="closeArticleDetail()">✕</button>
+                        <div class="article-detail-header">
+                            <div class="article-detail-meta">
+                                <span class="article-category" id="articleDetailCategory"></span>
+                                <span class="article-date" id="articleDetailDate"></span>
+                                <span class="article-views" id="articleDetailViews"></span>
+                            </div>
+                            <h1 class="article-detail-title" id="articleDetailTitle"></h1>
+                            <div class="article-detail-author">
+                                <img src="https://api.dicebear.com/7.x/bottts/svg?seed=aihub" alt="作者头像" class="author-avatar">
+                                <div class="author-info">
+                                    <span class="author-name">AIHub编辑部</span>
+                                    <span class="author-desc">AI领域深度观察者</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="article-detail-cover" id="articleDetailCover"></div>
+                        <div class="article-detail-body" id="articleDetailBody"></div>
+                        <div class="article-detail-footer">
+                            <div class="article-tags" id="articleDetailTags"></div>
+                            <div class="article-share">
+                                <span>分享到：</span>
+                                <button class="share-btn" onclick="shareArticle('weibo')">微博</button>
+                                <button class="share-btn" onclick="shareArticle('wechat')">微信</button>
+                                <button class="share-btn" onclick="shareArticle('twitter')">Twitter</button>
+                            </div>
+                        </div>
+                        <div class="related-articles">
+                            <h3>相关推荐</h3>
+                            <div class="related-list" id="relatedArticles"></div>
+                        </div>
+                    </div>
+                </div>
+
                 <!-- 右侧边栏 -->
                 <aside class="sidebar right">
                     <!-- 新用户引导 -->
-                    <div class="sidebar-card cta-card">
-                        <div class="cta-icon">🚀</div>
-                        <h3>新手入门指南</h3>
-                        <p>3分钟学会使用AI工具，提升工作效率</p>
-                        <a href="#" class="cta-btn" onclick="openModal('guideModal')">免费领取教程</a>
-                        <div class="cta-users">
-                            <div class="user-avatars">
-                                <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=1" alt="">
-                                <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=2" alt="">
-                                <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=3" alt="">
-                            </div>
-                            <span id="learnerCount">2.3万人已学习</span>
-                        </div>
-                    </div>
-
-                    <!-- 广告位 -->
-                    <div class="sidebar-card ad-card highlight">
-                        <div class="ad-badge">限时</div>
+                    <div class="sidebar-card ad-card">
+                        <div class="ad-badge">广告</div>
                         <div class="ad-content">
-                            <div class="ad-icon">💡</div>
-                            <h4>Midjourney教程</h4>
-                            <p>从零到高手，30天精通AI绘画</p>
-                            <a href="#" class="ad-btn" onclick="openModal('courseModal')">查看详情</a>
+                            <div class="ad-icon">📢</div>
+                            <h4>广告位招租</h4>
+                            <p>右侧边栏优质广告位</p>
+                            <a href="#" class="ad-btn" onclick="openModal('adModal')">联系合作</a>
                         </div>
                     </div>
 
                     <!-- 社区入口 -->
-                    <div class="sidebar-card community-card">
-                        <h3>💬 加入社区</h3>
-                        <p>与10万+AI爱好者交流</p>
-                        <div class="community-stats">
-                            <div class="community-stat">
-                                <span class="stat-num">10万+</span>
-                                <span class="stat-text">成员</span>
-                            </div>
-                            <div class="community-stat">
-                                <span class="stat-num">5000+</span>
-                                <span class="stat-text">教程</span>
-                            </div>
+                    <div class="sidebar-card ad-card">
+                        <div class="ad-badge">广告</div>
+                        <div class="ad-content">
+                            <div class="ad-icon">📢</div>
+                            <h4>广告位招租</h4>
+                            <p>右侧边栏底部广告位</p>
+                            <a href="#" class="ad-btn" onclick="openModal('adModal')">联系合作</a>
                         </div>
-                        <a href="#" class="community-btn" onclick="openModal('communityModal')">
-                            <svg viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
-                            </svg>
-                            加入社群
-                        </a>
                     </div>
                 </aside>
             </div>
@@ -394,15 +440,14 @@
             <div class="banner-ad">
                 <div class="banner-content">
                     <div class="banner-left">
-                        <div class="banner-icon">🎯</div>
+                        <div class="banner-icon">📢</div>
                         <div class="banner-text">
-                            <h3>企业AI解决方案</h3>
-                            <p>为您的团队定制AI工具集成方案，平均效率提升300%</p>
+                            <h3>广告位招租</h3>
+                            <p>首页底部横幅广告位，曝光率高，欢迎投放</p>
                         </div>
                     </div>
                     <div class="banner-right">
-                        <a href="#" class="banner-btn" onclick="openModal('enterpriseModal')">免费咨询</a>
-                        <span class="banner-note">已有500+企业合作</span>
+                        <a href="#" class="banner-btn" onclick="openModal('adModal')">联系合作</a>
                     </div>
                 </div>
             </div>
@@ -410,7 +455,7 @@
     </main>
 
     <!-- 页脚 -->
-    <footer class="footer">
+    <footer class="footer" role="contentinfo">
         <div class="container">
             <div class="footer-top">
                 <div class="footer-brand">
@@ -426,14 +471,11 @@
                     </a>
                     <p>发现最优质的AI工具，让AI为你的工作和生活赋能</p>
                     <div class="footer-social">
-                        <a href="#" class="social-btn" title="微信" onclick="openModal('wechatModal')">
+                        <a href="#" class="social-btn" title="微信" onclick="openModal('adModal')">
                             <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8.691 2.188C3.891 2.188 0 5.476 0 9.53c0 2.212 1.17 4.203 3.002 5.55a.59.59 0 01.213.665l-.39 1.48c-.019.07-.048.141-.048.213 0 .163.13.295.29.295a.326.326 0 00.167-.054l1.903-1.114a.864.864 0 01.717-.098 10.16 10.16 0 002.837.403c.276 0 .543-.027.811-.05-.857-2.578.157-4.972 1.932-6.446 1.703-1.415 3.882-1.98 5.853-1.838-.576-3.583-4.196-6.348-8.596-6.348zM5.785 5.991c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 01-1.162 1.178A1.17 1.17 0 014.623 7.17c0-.651.52-1.18 1.162-1.18zm5.813 0c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 01-1.162 1.178 1.17 1.17 0 01-1.162-1.178c0-.651.52-1.18 1.162-1.18z"/></svg>
                         </a>
-                        <a href="#" class="social-btn" title="微博" onclick="openWeibo()">
+                        <a href="#" class="social-btn" title="广告合作" onclick="openModal('adModal')">
                             <svg viewBox="0 0 24 24" fill="currentColor"><path d="M10.098 20.323c-3.977.391-7.414-1.406-7.672-4.02-.259-2.609 2.759-5.047 6.74-5.441 3.979-.394 7.413 1.404 7.671 4.018.259 2.6-2.759 5.049-6.739 5.443zM9.05 17.219c-.384.616-1.208.884-1.829.602-.612-.279-.793-.991-.406-1.593.379-.595 1.176-.861 1.793-.601.622.263.82.972.442 1.592zm1.27-1.827c-.141.237-.449.353-.689.253-.236-.09-.313-.361-.177-.586.138-.227.436-.346.672-.24.239.09.315.36.194.573zm.176-2.719c-1.893-.493-4.033.45-4.857 2.118-.836 1.704-.026 3.591 1.886 4.21 1.983.64 4.318-.341 5.132-2.179.8-1.793-.201-3.642-2.161-4.149z"/></svg>
-                        </a>
-                        <a href="#" class="social-btn" title="GitHub" onclick="openTool('https://github.com')">
-                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
                         </a>
                     </div>
                 </div>
@@ -462,10 +504,40 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 AIHub. All rights reserved. Made with ❤️ for AI enthusiasts.</p>
+                <p>&copy; 2025 AIHub. All rights reserved. Made with ❤️ for AI enthusiasts.</p>
             </div>
         </div>
     </footer>
+
+    <!-- 移动端导航菜单 -->
+    <div class="mobile-nav" id="mobileNav" role="navigation" aria-label="移动端导航">
+        <div class="mobile-nav-header">
+            <span class="logo-text">AI<span class="logo-highlight">Hub</span></span>
+            <button class="mobile-nav-close" onclick="toggleMobileMenu()" aria-label="关闭菜单">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M18 6L6 18M6 6l12 12"/>
+                </svg>
+            </button>
+        </div>
+        <nav class="mobile-nav-links">
+            <a href="#" class="mobile-nav-link active" data-nav="home" onclick="switchNav('home', event)">
+                <span>🏠</span> 首页
+            </a>
+            <a href="#" class="mobile-nav-link" data-nav="articles" onclick="switchNav('articles', event)">
+                <span>📚</span> AI文章
+            </a>
+            <a href="#" class="mobile-nav-link" data-nav="new" onclick="switchNav('new', event)">
+                <span>✨</span> 最新上线
+            </a>
+            <a href="#" class="mobile-nav-link" data-nav="hot" onclick="switchNav('hot', event)">
+                <span>🔥</span> 热门榜
+            </a>
+            <a href="#" class="mobile-nav-link" data-nav="free" onclick="switchNav('free', event)">
+                <span>🆓</span> 免费工具
+            </a>
+        </nav>
+    </div>
+    <div class="mobile-nav-overlay" id="mobileNavOverlay" onclick="toggleMobileMenu()"></div>
 
     <!-- 返回顶部 -->
     <button class="back-to-top" id="backToTop" onclick="scrollToTop()">
@@ -476,77 +548,194 @@
 
     <!-- 模态框容器 -->
     <div class="modal-overlay" id="modalOverlay" onclick="closeModalOnOverlay(event)">
-        <!-- 注册弹窗 -->
-        <div class="modal" id="registerModal">
+        <!-- 关于我们弹窗 -->
+        <div class="modal" id="aboutModal">
             <div class="modal-header">
-                <h3>🎁 新用户注册</h3>
+                <h3>ℹ️ 关于我们</h3>
                 <button class="modal-close" onclick="closeModal()">✕</button>
             </div>
             <div class="modal-body">
-                <div class="register-bonus">
-                    <div class="bonus-icon">🎉</div>
-                    <div class="bonus-text">
-                        <span class="bonus-title">注册即送100积分</span>
-                        <span class="bonus-desc">可兑换ChatGPT Plus等付费工具</span>
-                    </div>
+                <div style="text-align: center; margin-bottom: 24px;">
+                    <div style="font-size: 48px; margin-bottom: 16px;">🚀</div>
+                    <h4 style="font-size: 20px; margin-bottom: 8px;">AIHub - AI工具导航</h4>
+                    <p style="color: var(--text-secondary);">发现最优质的AI工具，让AI为你的工作和生活赋能</p>
                 </div>
-                <form class="register-form" onsubmit="handleRegister(event)">
-                    <div class="form-group">
-                        <label>手机号</label>
-                        <input type="tel" placeholder="请输入手机号" required>
+                <div style="line-height: 1.8; color: var(--text-secondary);">
+                    <p>AIHub 致力于为用户提供最全面、最优质的AI工具导航服务。我们精心筛选和整理各类AI工具，帮助用户快速找到适合自己的AI解决方案。</p>
+                    <p style="margin-top: 12px;">我们的使命是让每个人都能轻松使用AI技术，提升工作效率，激发创造力。</p>
+                </div>
+                <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 24px; text-align: center;">
+                    <div>
+                        <div style="font-size: 24px; font-weight: 700; color: var(--accent-primary);">100+</div>
+                        <div style="font-size: 12px; color: var(--text-muted);">AI工具</div>
                     </div>
-                    <div class="form-group">
-                        <label>验证码</label>
-                        <div class="code-input">
-                            <input type="text" placeholder="请输入验证码" required>
-                            <button type="button" class="send-code" onclick="sendCode(this)">获取验证码</button>
-                        </div>
+                    <div>
+                        <div style="font-size: 24px; font-weight: 700; color: var(--accent-primary);">50万+</div>
+                        <div style="font-size: 12px; color: var(--text-muted);">用户</div>
                     </div>
-                    <button type="submit" class="submit-form-btn">立即注册</button>
-                </form>
-                <div class="register-footer">
-                    <span>已有账号？<a href="#" onclick="switchModal('loginModal')">立即登录</a></span>
+                    <div>
+                        <div style="font-size: 24px; font-weight: 700; color: var(--accent-primary);">99%</div>
+                        <div style="font-size: 12px; color: var(--text-muted);">好评率</div>
+                    </div>
                 </div>
             </div>
         </div>
 
-        <!-- VIP弹窗 -->
-        <div class="modal" id="vipModal">
+        <!-- 联系我们弹窗 -->
+        <div class="modal" id="contactModal">
             <div class="modal-header">
-                <h3>👑 AI工具会员</h3>
+                <h3>📧 联系我们</h3>
                 <button class="modal-close" onclick="closeModal()">✕</button>
             </div>
             <div class="modal-body">
-                <div class="vip-plans">
-                    <div class="vip-plan" onclick="selectPlan(this, 'month')">
-                        <div class="plan-badge">最受欢迎</div>
-                        <div class="plan-name">月度会员</div>
-                        <div class="plan-price">
-                            <span class="price-current">¥99</span>
-                            <span class="price-original">¥299</span>
+                <div style="text-align: center; padding: 40px;">
+                    <div style="font-size: 48px; margin-bottom: 16px;">📬</div>
+                    <p style="color: var(--text-secondary);">如有问题，请通过广告合作页面联系</p>
+                    <a href="#" class="ad-btn" style="display: inline-block; margin-top: 20px;" onclick="switchModal('adModal')">查看广告合作</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- 使用指南弹窗 -->
+        <div class="modal" id="guideModal">
+            <div class="modal-header">
+                <h3>🚀 AI工具入门指南</h3>
+                <button class="modal-close" onclick="closeModal()">✕</button>
+            </div>
+            <div class="modal-body">
+                <div class="guide-steps">
+                    <div class="guide-step">
+                        <div class="step-num">1</div>
+                        <div class="step-content">
+                            <h4>选择合适的AI工具</h4>
+                            <p>根据您的需求，在分类中找到合适的AI工具</p>
                         </div>
-                        <ul class="plan-features">
-                            <li>✓ 解锁50+付费AI工具</li>
-                            <li>✓ 每月1000次使用额度</li>
-                            <li>✓ 专属客服支持</li>
-                        </ul>
                     </div>
-                    <div class="vip-plan recommended" onclick="selectPlan(this, 'year')">
-                        <div class="plan-badge">超值推荐</div>
-                        <div class="plan-name">年度会员</div>
-                        <div class="plan-price">
-                            <span class="price-current">¥599</span>
-                            <span class="price-original">¥3588</span>
+                    <div class="guide-step">
+                        <div class="step-num">2</div>
+                        <div class="step-content">
+                            <h4>注册并开始使用</h4>
+                            <p>点击工具卡片，跳转官网注册账号即可使用</p>
                         </div>
-                        <ul class="plan-features">
-                            <li>✓ 解锁50+付费AI工具</li>
-                            <li>✓ 每月5000次使用额度</li>
-                            <li>✓ 专属客服支持</li>
-                            <li>✓ 优先体验新功能</li>
-                        </ul>
+                    </div>
+                    <div class="guide-step">
+                        <div class="step-num">3</div>
+                        <div class="step-content">
+                            <h4>掌握使用技巧</h4>
+                            <p>查看我们提供的使用教程，快速上手</p>
+                        </div>
                     </div>
                 </div>
-                <button class="vip-btn" onclick="handleVipPurchase()">立即开通</button>
+            </div>
+        </div>
+
+        <!-- 常见问题弹窗 -->
+        <div class="modal" id="faqModal">
+            <div class="modal-header">
+                <h3>❓ 常见问题</h3>
+                <button class="modal-close" onclick="closeModal()">✕</button>
+            </div>
+            <div class="modal-body">
+                <div class="faq-list">
+                    <div class="faq-item">
+                        <div class="faq-question">Q: 如何提交我的AI工具？</div>
+                        <div class="faq-answer">A: 点击导航栏的"提交工具"按钮，填写工具信息即可提交。我们会在3个工作日内完成审核。</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">Q: 工具收录需要收费吗？</div>
+                        <div class="faq-answer">A: 基础收录完全免费。如需置顶推荐或广告推广，请联系商务合作。</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">Q: 工具信息有误怎么办？</div>
+                        <div class="faq-answer">A: 请通过"联系我们"反馈，我们会在24小时内核实并更新。</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 隐私政策弹窗 -->
+        <div class="modal" id="privacyModal">
+            <div class="modal-header">
+                <h3>🔒 隐私政策</h3>
+                <button class="modal-close" onclick="closeModal()">✕</button>
+            </div>
+            <div class="modal-body" style="max-height: 400px; overflow-y: auto;">
+                <div style="line-height: 1.8; color: var(--text-secondary);">
+                    <h4 style="color: var(--text-primary); margin-bottom: 12px;">信息收集</h4>
+                    <p>我们收集您在使用服务时主动提供的信息，包括但不限于注册信息、提交的工具信息等。</p>
+                    <h4 style="color: var(--text-primary); margin: 20px 0 12px;">信息使用</h4>
+                    <p>我们使用收集的信息来提供、维护和改进我们的服务，以及与您沟通。</p>
+                    <h4 style="color: var(--text-primary); margin: 20px 0 12px;">信息保护</h4>
+                    <p>我们采取合理的安全措施来保护您的个人信息，防止未经授权的访问、使用或泄露。</p>
+                    <h4 style="color: var(--text-primary); margin: 20px 0 12px;">Cookie使用</h4>
+                    <p>我们使用Cookie来改善您的浏览体验，您可以在浏览器设置中管理Cookie偏好。</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 服务条款弹窗 -->
+        <div class="modal" id="termsModal">
+            <div class="modal-header">
+                <h3>📋 服务条款</h3>
+                <button class="modal-close" onclick="closeModal()">✕</button>
+            </div>
+            <div class="modal-body" style="max-height: 400px; overflow-y: auto;">
+                <div style="line-height: 1.8; color: var(--text-secondary);">
+                    <h4 style="color: var(--text-primary); margin-bottom: 12px;">服务说明</h4>
+                    <p>AIHub为用户提供AI工具导航服务，所有工具信息均来自公开渠道或用户提交。</p>
+                    <h4 style="color: var(--text-primary); margin: 20px 0 12px;">用户责任</h4>
+                    <p>用户应遵守相关法律法规，不得利用本平台从事违法活动。用户对提交内容的真实性负责。</p>
+                    <h4 style="color: var(--text-primary); margin: 20px 0 12px;">免责声明</h4>
+                    <p>本平台仅提供工具信息展示，不对第三方工具的质量、安全性负责。使用第三方工具产生的任何问题，本平台不承担责任。</p>
+                    <h4 style="color: var(--text-primary); margin: 20px 0 12px;">知识产权</h4>
+                    <p>本平台的所有内容（包括但不限于文字、图片、代码）均受知识产权法保护。</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 广告合作弹窗 -->
+        <div class="modal" id="adModal">
+            <div class="modal-header">
+                <h3>📢 广告合作</h3>
+                <button class="modal-close" onclick="closeModal()">✕</button>
+            </div>
+            <div class="modal-body">
+                <div style="text-align: center; margin-bottom: 24px;">
+                    <div style="font-size: 48px;">🤝</div>
+                    <h4 style="margin-top: 16px;">欢迎投放广告</h4>
+                    <p style="color: var(--text-secondary);">优质流量，精准用户，多种广告位可选</p>
+                </div>
+                <div style="background: var(--bg-tertiary); border-radius: 12px; padding: 20px; margin-bottom: 20px;">
+                    <h5 style="margin-bottom: 12px;">🎯 广告位类型</h5>
+                    <ul style="color: var(--text-secondary); line-height: 2;">
+                        <li>• 首页顶部公告条</li>
+                        <li>• 左侧边栏广告卡片</li>
+                        <li>• 右侧边栏广告卡片</li>
+                        <li>• 首页底部横幅广告</li>
+                        <li>• 工具列表置顶推荐</li>
+                    </ul>
+                </div>
+                <div style="background: linear-gradient(135deg, rgba(139, 92, 246, 0.2), rgba(59, 130, 246, 0.1)); border-radius: 12px; padding: 20px; margin-bottom: 20px;">
+                    <h5 style="margin-bottom: 12px;">📊 流量数据</h5>
+                    <div style="display: grid; grid-template-columns: repeat(3, 1fr); text-align: center;">
+                        <div>
+                            <div style="font-size: 24px; font-weight: 700; color: var(--accent-primary);">10万+</div>
+                            <div style="font-size: 12px; color: var(--text-muted);">日访问量</div>
+                        </div>
+                        <div>
+                            <div style="font-size: 24px; font-weight: 700; color: var(--accent-primary);">50万+</div>
+                            <div style="font-size: 12px; color: var(--text-muted);">累计用户</div>
+                        </div>
+                        <div>
+                            <div style="font-size: 24px; font-weight: 700; color: var(--accent-primary);">3分钟</div>
+                            <div style="font-size: 12px; color: var(--text-muted);">平均停留</div>
+                        </div>
+                    </div>
+                </div>
+                <div style="background: var(--bg-tertiary); border-radius: 12px; padding: 20px; text-align: center;">
+                    <h5 style="margin-bottom: 12px;">📧 联系方式</h5>
+                    <p style="color: var(--text-secondary);">请通过页面底部的"联系我们"获取联系方式</p>
+                </div>
             </div>
         </div>
 
@@ -590,75 +779,6 @@
                     </div>
                     <button type="submit" class="submit-form-btn">提交审核</button>
                 </form>
-            </div>
-        </div>
-
-        <!-- 新手教程弹窗 -->
-        <div class="modal" id="guideModal">
-            <div class="modal-header">
-                <h3>🚀 AI工具入门指南</h3>
-                <button class="modal-close" onclick="closeModal()">✕</button>
-            </div>
-            <div class="modal-body">
-                <div class="guide-steps">
-                    <div class="guide-step">
-                        <div class="step-num">1</div>
-                        <div class="step-content">
-                            <h4>选择合适的AI工具</h4>
-                            <p>根据您的需求，在分类中找到合适的AI工具</p>
-                        </div>
-                    </div>
-                    <div class="guide-step">
-                        <div class="step-num">2</div>
-                        <div class="step-content">
-                            <h4>注册并开始使用</h4>
-                            <p>点击工具卡片，跳转官网注册账号即可使用</p>
-                        </div>
-                    </div>
-                    <div class="guide-step">
-                        <div class="step-num">3</div>
-                        <div class="step-content">
-                            <h4>掌握使用技巧</h4>
-                            <p>查看我们提供的使用教程，快速上手</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="guide-form">
-                    <p>输入邮箱，免费获取完整教程</p>
-                    <form onsubmit="handleGetGuide(event)">
-                        <input type="email" placeholder="请输入您的邮箱" required>
-                        <button type="submit">免费获取</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-
-        <!-- 微信弹窗 -->
-        <div class="modal modal-small" id="wechatModal">
-            <div class="modal-header">
-                <h3>📱 微信扫码关注</h3>
-                <button class="modal-close" onclick="closeModal()">✕</button>
-            </div>
-            <div class="modal-body" style="text-align: center;">
-                <div class="qrcode-placeholder">
-                    <div class="qr-code">📱</div>
-                    <p>微信扫码关注公众号</p>
-                    <p class="qr-tip">获取最新AI工具资讯</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- 视频弹窗 -->
-        <div class="modal modal-video" id="videoModal">
-            <div class="modal-header">
-                <h3>🎬 AIHub演示视频</h3>
-                <button class="modal-close" onclick="closeModal()">✕</button>
-            </div>
-            <div class="modal-body">
-                <div class="video-placeholder">
-                    <div class="play-icon">▶</div>
-                    <p>视频演示区域</p>
-                </div>
             </div>
         </div>
 
